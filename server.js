@@ -4,7 +4,8 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-const LOCAL_N8N_WEBHOOK_URL = 'https://<رابط-ngrok>/webhook'; // ← عدّله لاحقًا
+// ✅ هذا هو رابط ngrok الفعلي من جهازك
+const LOCAL_N8N_WEBHOOK_URL = 'https://c964-197-202-47-209.ngrok-free.app/webhook';
 
 app.post('/webhook', async (req, res) => {
   console.log('رسالة من Telegram:', req.body);
@@ -21,9 +22,8 @@ app.get('/', (req, res) => {
   res.send('✅ Webhook Relay Server is running!');
 });
 
-// ⚠️ مهم: استخدم هذا المنفذ الذي تطلبه Render
+// ⚠️ Render يستخدم هذا المنفذ
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`✅ الخادم يعمل على المنفذ ${PORT}`);
 });
-
