@@ -5,7 +5,8 @@ const app = express();
 app.use(express.json());
 
 // ✅ هذا هو رابط ngrok الفعلي من جهازك
-const LOCAL_N8N_WEBHOOK_URL = 'https://c964-197-202-47-209.ngrok-free.app/webhook';
+const LOCAL_N8N_WEBHOOK_URL = 'https://0a9b-197-202-47-209.ngrok-free.app/webhook';
+
 
 app.post('/webhook', async (req, res) => {
   console.log('رسالة من Telegram:', req.body);
